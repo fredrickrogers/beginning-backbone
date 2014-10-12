@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <title>Beginnging Backbone.js - Product Inventory</title>
+        
+        <link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
+        <link rel="stylesheet" href="css/bootstrap-theme.css" type="text/css" media="all" />
+        <link rel="stylesheet" href="css/styles.css" type="text/css" media="all" />
+    </head>
+    <body>
+        <div class="header">
+            <div class="navbar navbar-default">
+                <div class="navbar-inner">
+                    <div class="container-fluid">
+                        <a href="#" class="navbar-brand">Product Inventory</a>
+                    
+                        <ul class="nav navbar-nav">
+                            <li><a href="#products">Products</a></li>
+                            <li><a href="#products/add">Add Product</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            <div class="container-fluid">
+                <div class="content">
+                    
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            
+        </div>
+        
+        <script id="product-list-item" type="text/template">
+            <h3><%= name %></h3>
+            <span><strong>Price: </strong><%= price %></span></br>
+            <span><strong>Category: </strong><%= category %></span></br/>
+            <a class="btn btn-default" href="#products/<%= id %>">View</a>
+        </script>
+        
+        <script id="product-details" type="text/template">
+            <fieldset>
+                <legend>Product Details</legend>
+                <div class="form-group">
+                    <label for="id">Id:</label>
+                    <input type="text" name="id" class="form-control" value="<%= id === null ? '' : id %>" disabled/>
+                </div>
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type='text' name="name" class="form-control" value="<%= name %>"/>
+                </div>
+                <div class="form-group">
+                    <label for="price">Price:</label>
+                    <input type='text' name="price" class="form-control" value="<%= price %>"/>
+                </div>
+                <div class="form-group">
+                    <label for="category">Category:</label>
+                    <input type='text' name="category" class="form-control" value="<%= category%>"/>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-primary save" type="submit">Save Product</button>
+                    <button class="btn btn-default reset" type="reset">Reset</button>
+                    <button class="btn btn-link cancel" type="button">Cancel</button>
+                </div>
+            </fieldset>
+        </script>
+        
+        <script src="lib/jquery-2.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="lib/underscore.js" type="text/javascript" charset="utf-8"></script>
+        <script src="lib/backbone.js" type="text/javascript" charset="utf-8"></script>
+        <script type="text/javascript" src="lib/bootstrap.js"></script>
+        
+        <script src="js/models/models.js" type="text/javascript" charset="utf-8"></script>
+        <script type="text/javascript" src="js/views/views.js"></script>
+        <script src="js/app.js" type="text/javascript" charset="utf-8"></script>
+
+    </body>
+</html>
